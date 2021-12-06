@@ -1,0 +1,6 @@
+export default function daysToXmas(date) {
+  const first = new Date('Dec 25, 2021')
+  const dayLeft = first.getTime () - date.getTime ();
+ 
+ return Math.ceil(dayLeft / (1000 * 3600 * 24));
+}

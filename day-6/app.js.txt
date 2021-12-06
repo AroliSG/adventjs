@@ -1,0 +1,29 @@
+export default function sumPairs(numbers, result) {
+  // ¡Y no olvides compartir tu solución en redes!
+  let index = 0;
+  let beginner = 0;
+  let sum = null;
+  while (true) {
+    // debugger ssgg
+    if (index == numbers.length-1) {
+      if (beginner != numbers.length-1) {
+          beginner++;
+          index = beginner;
+      }
+    };
+      // sum in values
+    sum = numbers [beginner] + numbers [index+1];
+    if (sum === result) { 
+      sum = [numbers [beginner], numbers [index+1]]; 
+      break
+    }
+      // if beginner reachs the end lets break the loop
+    if (beginner === numbers.length-1) {
+      sum = null;
+      break;
+    }
+    index++;
+  }
+
+  return sum;
+}

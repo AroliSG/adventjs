@@ -1,0 +1,4 @@
+
+export default function contarOvejas(ovejas) {
+  return ovejas.filter (e => e.color === 'rojo' && e.name.toLowerCase ().       includes ('a') && e.name.toLowerCase ().includes ('n'));
+}

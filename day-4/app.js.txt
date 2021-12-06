@@ -1,0 +1,32 @@
+ const decoder = (quantity, ass) => {
+  let dataToReturn = '';
+  let dataToAss = "*";
+  for (let i = 0; i < quantity-1; i++) {
+    if (dataToReturn) dataToReturn += '_';
+    else dataToReturn = '_';
+  }
+  for (let i = 0; i < ass; i++) {
+      dataToAss += '**';
+  }
+  return dataToReturn + dataToAss + dataToReturn;
+} 
+
+export default function createXmasTree(height) {
+  let data;
+  for (let i = 0; i < height; i++) {
+    if (data) data += decoder (height-i, i) + '\n';
+    else data = decoder (height, i) + '\n';
+  }
+  let feets = '';
+
+  for (let i = 0; i < height-1; i++) {
+    if (feets) feets += '_';
+    else feets = '_';
+  }
+  let roots = feets + "#" + feets;
+  let result = data;
+    result += roots + '\n';
+    result += roots;
+    
+  return result;    
+}  

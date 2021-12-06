@@ -1,0 +1,9 @@
+export default function isValid(string) {
+  if (string.includes ('{') || string.includes ('[')) return false;
+  
+  if (string.includes ('()')) return false;
+
+  if (string.includes ('(') && string.includes (')')) return true;
+
+  else return false;
+}
